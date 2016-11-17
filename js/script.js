@@ -1,4 +1,3 @@
-/* Pick your poison */
 /* 
 // Document Ready no jQuery
 document.addEventListener("DOMContentLoaded", function(event) { 
