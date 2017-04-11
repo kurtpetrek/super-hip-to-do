@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+$clr1: #FFE949;
+$clr2: #20ADD8;
+$clr3: #BFD7EA;
+$clr4: #FF5454;
+$clr5: #4ECDC4;
+
+body{
+  background: darken($clr2, 15%);
+}
+
+.container {
+  width: 500px;
+  margin: 1rem auto;
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(to bottom, $clr1 0%, darken($clr1, 5%) 100%);
+  border-radius: 15px;
+  border-top: 5px solid $clr4;
+  border-right: 5px solid darken($clr4, 3%);
+  border-bottom: 5px solid $clr4;
+  border-left: 5px solid darken($clr4, 3%);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.9);
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 95%;
+  }
+}
+
+h1 {
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 30px;
+  line-height: 30px;
+  margin: 1rem;
+  text-align: center;
+  text-shadow: 0px 0px 4px #fff;
+}
+
+.add-to-do {
+  position: relative;
+}
+
+.add-to-do input {
+  width: calc(100% - 35px);
+  height: 35px;
+  line-height: 35px;
+  padding: 0 5px;
+  background: lighten($clr2, 25%);
+  border: 3px solid darken($clr5, 20%);
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.9);
+  transition: .25s;
+}
+
+.add-to-do .frame-input {
+  border: 5px solid $clr4;
+}
+
+.add-to-do .add-btn{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0rem;
+  right: 0rem;
+  cursor: pointer;
+  
+  &::after{
+    content: "";
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    left: 40%;
+    border-radius: 5px;
+    transition: .25s;
+  }
+  &::before{
+    content: "";
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    background: black;
+    top: 40%;
+    border-radius: 5px;
+    transition: .25s;
+  }
+}
+
+.add-to-do .stop {
+  &::before, &::after {
+    background: $clr4;
+  }
+}
+
+.add-to-do .go {
+  &::before, &::after {
+    background: darken($clr5, 20%);
+  }
+}
+
+.spin {
+  animation: spin .5s;
+}
+
+@keyframes spin {
+  0%{ 
+    transform: rotate(0deg);
+  }
+  100%{ 
+    transform: rotate(360deg);
+  }
+}
+
+.to-do-list {
+  background: $clr4;
+  padding: .5rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.9);
+  transition: .5s;
+}
+
+.to-do {
+  position: relative;
+  max-height: 0px;
+  overflow: hidden;
+  animation: grow .5s forwards;
+}
+
+@keyframes grow {
+  0% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  100% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+}
+
+.shrink {
+  animation: shrink .5s forwards;
+}
+
+@keyframes shrink {
+  0% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+  100% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+}
+
+.to-do-text {
+  padding: 1rem;
+  padding-right: calc(30px + 1rem);
+  min-height: 50px;
+  margin: 1rem;
+  background: lighten($clr2, 25%);
+  border-radius: 10px 0px 10px 0px;
+  position: relative;
+  z-index: 2;
+  box-shadow: darken($clr2, 35%) 1px 1px,
+    darken($clr2, 35%) 2px 2px,
+    darken($clr2, 35%) 3px 3px,
+    darken($clr2, 35%) 4px 4px,
+    darken($clr2, 35%) 5px 5px,
+    darken($clr2, 35%) 6px 6px,
+    darken($clr2, 35%) 7px 7px,
+    darken($clr2, 35%) 8px 8px,
+    darken($clr2, 35%) 9px 9px,
+    darken($clr2, 35%) 10px 10px,
+    darken($clr2, 35%) 11px 11px,
+    darken($clr2, 35%) 12px 12px,
+    darken($clr2, 35%) 13px 13px,
+    darken($clr2, 35%) 14px 14px,
+    darken($clr2, 35%) 15px 15px,
+    darken($clr2, 35%) 16px 16px,
+    darken($clr2, 35%) 17px 17px,
+    darken($clr2, 35%) 18px 18px,
+    darken($clr2, 35%) 19px 19px,
+    darken($clr2, 35%) 20px 20px,
+    darken($clr2, 35%) 21px 21px,
+    darken($clr2, 35%) 22px 22px,
+    darken($clr2, 35%) 23px 23px,
+    darken($clr2, 35%) 24px 24px,
+    darken($clr2, 35%) 25px 25px,
+    darken($clr2, 35%) 26px 26px,
+    darken($clr2, 35%) 27px 27px,
+    darken($clr2, 35%) 28px 28px,
+    darken($clr2, 35%) 29px 29px,
+    darken($clr2, 35%) 30px 30px,
+    darken($clr2, 35%) 31px 31px,
+    darken($clr2, 35%) 32px 32px,
+    darken($clr2, 35%) 33px 33px,
+    darken($clr2, 35%) 34px 34px,
+    darken($clr2, 35%) 35px 35px,
+    darken($clr2, 35%) 36px 36px,
+    darken($clr2, 35%) 37px 37px,
+    darken($clr2, 35%) 38px 38px,
+    darken($clr2, 35%) 39px 39px,
+    darken($clr2, 35%) 40px 40px,
+    darken($clr2, 35%) 41px 41px,
+    darken($clr2, 35%) 42px 42px,
+    darken($clr2, 35%) 43px 43px,
+    darken($clr2, 35%) 44px 44px,
+    darken($clr2, 35%) 45px 45px,
+    darken($clr2, 35%) 46px 46px,
+    darken($clr2, 35%) 47px 47px,
+    darken($clr2, 35%) 48px 48px,
+    darken($clr2, 35%) 49px 49px,
+    darken($clr2, 35%) 50px 50px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fade-out .5s forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.checked-button {  
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+  z-index: 3;
+  right: 30px;
+  cursor: pointer;
+  transition: .5s;
+  
+  
+  &::before {
+    content: "";
+    border: 5px solid $clr4;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    transition: .25s;
+  }
+}
+
+.checked-button:hover {
+  &::before {
+    border: 0px solid $clr4;
+    border-right: 5px solid darken($clr5, 10%);
+    border-bottom: 5px solid darken($clr5, 10%);
+    width: 15px;
+    transform: rotate(45deg);
+    right: 10px;
+  }
+}
+
+.checked-button:active {
+  &::before {
+    border: 0px solid $clr4;
+    border-right: 7px solid lighten($clr5, 10%);
+    border-bottom: 7px solid lighten($clr5, 10%);
+    width: 25px;
+    height: 40px;
+    top: -10px;
+    transform: rotate(45deg);
+    right: 10px;
+  }
+}

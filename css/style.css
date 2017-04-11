@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans");
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #167895;
+}
+
+.container {
+  width: 500px;
+  margin: 1rem auto;
+  position: relative;
+  padding: 1rem;
+  background: -webkit-linear-gradient(top, #FFE949 0%, #ffe630 100%);
+  background: linear-gradient(to bottom, #FFE949 0%, #ffe630 100%);
+  border-radius: 15px;
+  border-top: 5px solid #FF5454;
+  border-right: 5px solid #ff4545;
+  border-bottom: 5px solid #FF5454;
+  border-left: 5px solid #ff4545;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 95%;
+  }
+}
+h1 {
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 30px;
+  line-height: 30px;
+  margin: 1rem;
+  text-align: center;
+  text-shadow: 0px 0px 4px #fff;
+}
+
+.add-to-do {
+  position: relative;
+}
+
+.add-to-do input {
+  width: calc(100% - 35px);
+  height: 35px;
+  line-height: 35px;
+  padding: 0 5px;
+  background: #8ad6ee;
+  border: 3px solid #288d86;
+  box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.9);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.add-to-do .frame-input {
+  border: 5px solid #FF5454;
+}
+
+.add-to-do .add-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0rem;
+  right: 0rem;
+  cursor: pointer;
+}
+.add-to-do .add-btn::after {
+  content: "";
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  background: black;
+  left: 40%;
+  border-radius: 5px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+.add-to-do .add-btn::before {
+  content: "";
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  background: black;
+  top: 40%;
+  border-radius: 5px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.add-to-do .stop::before, .add-to-do .stop::after {
+  background: #FF5454;
+}
+
+.add-to-do .go::before, .add-to-do .go::after {
+  background: #288d86;
+}
+
+.spin {
+  -webkit-animation: spin .5s;
+          animation: spin .5s;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.to-do-list {
+  background: #FF5454;
+  padding: .5rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.9);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.to-do {
+  position: relative;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-animation: grow .5s forwards;
+          animation: grow .5s forwards;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  100% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  100% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+}
+.shrink {
+  -webkit-animation: shrink .5s forwards;
+          animation: shrink .5s forwards;
+}
+
+@-webkit-keyframes shrink {
+  0% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+  100% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    max-height: 200px;
+    overflow: visible;
+    opacity: 1;
+  }
+  100% {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+.to-do-text {
+  padding: 1rem;
+  padding-right: calc(30px + 1rem);
+  min-height: 50px;
+  margin: 1rem;
+  background: #8ad6ee;
+  border-radius: 10px 0px 10px 0px;
+  position: relative;
+  z-index: 2;
+  box-shadow: #09303d 1px 1px, #09303d 2px 2px, #09303d 3px 3px, #09303d 4px 4px, #09303d 5px 5px, #09303d 6px 6px, #09303d 7px 7px, #09303d 8px 8px, #09303d 9px 9px, #09303d 10px 10px, #09303d 11px 11px, #09303d 12px 12px, #09303d 13px 13px, #09303d 14px 14px, #09303d 15px 15px, #09303d 16px 16px, #09303d 17px 17px, #09303d 18px 18px, #09303d 19px 19px, #09303d 20px 20px, #09303d 21px 21px, #09303d 22px 22px, #09303d 23px 23px, #09303d 24px 24px, #09303d 25px 25px, #09303d 26px 26px, #09303d 27px 27px, #09303d 28px 28px, #09303d 29px 29px, #09303d 30px 30px, #09303d 31px 31px, #09303d 32px 32px, #09303d 33px 33px, #09303d 34px 34px, #09303d 35px 35px, #09303d 36px 36px, #09303d 37px 37px, #09303d 38px 38px, #09303d 39px 39px, #09303d 40px 40px, #09303d 41px 41px, #09303d 42px 42px, #09303d 43px 43px, #09303d 44px 44px, #09303d 45px 45px, #09303d 46px 46px, #09303d 47px 47px, #09303d 48px 48px, #09303d 49px 49px, #09303d 50px 50px;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-out {
+  -webkit-animation: fade-out .5s forwards;
+          animation: fade-out .5s forwards;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.checked-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  z-index: 3;
+  right: 30px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+.checked-button::before {
+  content: "";
+  border: 5px solid #FF5454;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.checked-button:hover::before {
+  border: 0px solid #FF5454;
+  border-right: 5px solid #33b5ac;
+  border-bottom: 5px solid #33b5ac;
+  width: 15px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  right: 10px;
+}
+
+.checked-button:active::before {
+  border: 0px solid #FF5454;
+  border-right: 7px solid #76d8d1;
+  border-bottom: 7px solid #76d8d1;
+  width: 25px;
+  height: 40px;
+  top: -10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  right: 10px;
+}
